@@ -1,0 +1,159 @@
+$padding-x: 12px ;
+
+.options {
+  border-radius: 18px;
+  position: absolute;
+  background-color: white;
+  width: 250px;
+  box-shadow: 0px 0px 2px rgba($color: #000000, $alpha: .3);
+  border-radius: 18px;
+  overflow: hidden;
+  transform: translateY(25%);
+  opacity: 0;
+  transition: transform .25s linear, opacity .25s linear;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.show-options {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.options-header {
+  padding: 5px $padding-x ;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: .3);
+  background-color: rgb(241, 241, 241);
+
+  span {
+    // color: rgb(216, 215, 215);
+    font-size: 13px;
+  }
+}
+
+.options-body {
+  padding: 10px $padding-x ;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: .3);
+  gap: 12px;
+
+  div {
+    padding: 6px 5px ;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 9px;
+    cursor: pointer;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      background-color: rgba($color: rgb(193, 193, 193), $alpha: .2);
+    }
+  }
+}
+
+.options-footer {
+  position: relative;
+  overflow: hidden;
+  
+  
+  .delete-button-wrapper {
+    padding: 6px $padding-x;
+    position: relative;
+    height: 100%;
+    transform: translateY(0%);
+    transition: transform .4s ease;
+
+    div {
+      padding: 6px 5px ;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-radius: 9px;
+      cursor: pointer;
+      color: #e04352;
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+
+      svg {
+        path {
+          stroke: currentColor;
+        }
+      }
+
+      &:hover {
+        background-color: rgba($color: rgb(193, 193, 193), $alpha: .2);
+      }
+    }
+  }
+  
+  .confirm-delete-button-wrapper {
+    padding: 0px 6px;
+    // padding: 10px $padding-x;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform .4s ease;
+
+    div {
+      display: flex;
+      height: 100%;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 9px;
+        padding: 9px 5px ;
+        cursor: pointer;
+
+        &:nth-of-type(1) {
+          background-color: #e04352;
+          color: white;
+        }
+
+        &:nth-of-type(2) {
+          box-shadow: 0px 0px 2px rgba($color: #000000, $alpha: .4);
+        }
+      }
+    }
+  }
+
+
+}
+
+.confirm-active {
+  .delete-button-wrapper {
+    transform: translateY(-100%) !important;
+  }
+
+  .confirm-delete-button-wrapper {
+    transform: translateY(0) !important;
+  }
+}

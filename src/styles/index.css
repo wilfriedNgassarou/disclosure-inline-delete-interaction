@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.app {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes switch {
+  0% {
+    height: 48px;
+  }
+  50% {
+    height: 51px;
+  }
+  100% {
+    height: 48px;
+  }
+}
+.switcher-container {
+  width: 49px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 9px;
+  perspective: 100px;
+}
+
+.switcher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background-color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 9px;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.15s linear;
+}
+.switcher div {
+  height: 6px;
+  width: 6px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.switch {
+  animation-name: switch;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+}
+
+.options {
+  border-radius: 18px;
+  position: absolute;
+  background-color: white;
+  width: 250px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 18px;
+  overflow: hidden;
+  transform: translateY(25%);
+  opacity: 0;
+  transition: transform 0.25s linear, opacity 0.25s linear;
+}
+.options svg {
+  width: 24px;
+  height: 24px;
+}
+
+.show-options {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.options-header {
+  padding: 5px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: rgb(241, 241, 241);
+}
+.options-header span {
+  font-size: 13px;
+}
+
+.options-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  gap: 12px;
+}
+.options-body div {
+  padding: 6px 5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+.options-body div span {
+  display: flex;
+  align-items: center;
+}
+.options-body div:hover {
+  background-color: rgba(193, 193, 193, 0.2);
+}
+
+.options-footer {
+  position: relative;
+  overflow: hidden;
+}
+.options-footer .delete-button-wrapper {
+  padding: 6px 12px;
+  position: relative;
+  height: 100%;
+  transform: translateY(0%);
+  transition: transform 0.4s ease;
+}
+.options-footer .delete-button-wrapper div {
+  padding: 6px 5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 9px;
+  cursor: pointer;
+  color: #e04352;
+}
+.options-footer .delete-button-wrapper div span {
+  display: flex;
+  align-items: center;
+}
+.options-footer .delete-button-wrapper div svg path {
+  stroke: currentColor;
+}
+.options-footer .delete-button-wrapper div:hover {
+  background-color: rgba(193, 193, 193, 0.2);
+}
+.options-footer .confirm-delete-button-wrapper {
+  padding: 0px 6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.options-footer .confirm-delete-button-wrapper div {
+  display: flex;
+  height: 100%;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.options-footer .confirm-delete-button-wrapper div span {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  padding: 9px 5px;
+  cursor: pointer;
+}
+.options-footer .confirm-delete-button-wrapper div span:nth-of-type(1) {
+  background-color: #e04352;
+  color: white;
+}
+.options-footer .confirm-delete-button-wrapper div span:nth-of-type(2) {
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+}
+
+.confirm-active .delete-button-wrapper {
+  transform: translateY(-100%) !important;
+}
+.confirm-active .confirm-delete-button-wrapper {
+  transform: translateY(0) !important;
+}
+
+/*# sourceMappingURL=index.css.map */
