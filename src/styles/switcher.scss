@@ -36,8 +36,6 @@
   position: relative;
   overflow: hidden;
   transition: height .15s linear;
-  // transform: scale(1);
-  // transform-origin: top;
 
   div {
     height: 6px;
@@ -52,11 +50,3 @@
   animation-duration: .3s;
   animation-timing-function: linear;
 }
-
-// .switcher-close {
-//   height: 51px;
-//   // transform: scaleY(1.03) ;
-// }
-
-
-
